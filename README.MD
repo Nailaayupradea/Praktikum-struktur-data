@@ -1,3 +1,103 @@
+public class latihan {} : digunakan untuk mendeklrasi kelas
+
+public static void main(String[] args) {} : metode utama (main) yang akan dijalankan
+
+int[] number = new int[5]; : deklrasi dan inisialisasi 5 elemen
+
+number[0]=1;
+number[1]=2;
+number[2]=3;
+number[3]=4;
+number[4]=5;
+: inisialisasi
+
+//Soal no 1 
+
+System.out.println("\nSoal no 1"); : mencetak output ke bawah (baris baru)
+
+for (int i = 0; i < number.length; i++) {} : mengulang setiap elemen array
+
+System.out.print(number[i]+" "); : mencetak elemen number [i] sebaris dan menambahkan spasi setelah angka
+
+System.out.println(""); : mencetak baris kosong ke bawah
+
+//Soal no 2
+
+for (int i = 0; i < number.length; i++) {} : mengulang setiap elemen array
+
+System.out.print(number[i]); : mencetak elemen number [i] sebaris
+
+if (i<4) {
+            System.out.print(",");
+           }     
+: mencetak koma di antara angka yang kurang dari 4 (bukan elemen terakhir)
+
+//Soal no 3
+
+for (int i = 0; i < number.length; i++) {} : mengulang setiap elemen array
+
+if (i%2==0) {
+                System.out.print(number[i]);
+               }
+: i%2==0 nilai i habis dibagi 2, mengecek apakah i genap jika genap maka blok if akan dieksekusi
+
+if (i<4) {
+            System.out.print(",");
+           }     
+: mencetak koma di antara angka yang kurang dari 4
+
+//Soal no 4
+
+for (int i = 4; i > -1; i--) {} : mengulang setiap elemen array dari 4 ke 0 (mundur)
+
+if (i%2==0) {
+                System.out.print(number[i]);
+               }
+: i%2==0 nilai i habis dibagi 2, mengecek apakah i genap jika genap maka blok if akan dieksekusi
+
+if (i>1) {
+                System.out.print(",");
+                }
+: mencetak koma di antara angka yang lebih dari 1
+
+//Soal no 5
+
+for (int i = 0; i < number.length; i++) {} : mengulang setiap elemen array
+
+if (i%2==1) {
+                System.out.print(number[i]);
+               }
+: mengecek apakah i adalah angka ganjil, jika ganjil maka blok if akan dieksekusi
+
+if (i<2) {
+                System.out.print(",");
+                } 
+: mencetak koma di antara angka yang kurang dari 2
+
+//Soal no 6
+
+for (int i = 0; i < number.length; i++) {} : mengulang setiap elemen array
+
+if (i == 1) {
+                System.out.print(number[0] + ","); 
+                }
+: mencetak koma, mencetak elemen number [0] saat indeks mencapai 1 (number[0]) akan dicetak ulang
+
+else if (i == 3) {
+                System.out.print(number[1] + ",");
+             } 
+: mencetak koma, mencetak elemen number [1] saat indeks mencapai 3 (number[1]) akan dicetak ulang
+
+else {
+                System.out.print(number[i]);
+             }
+: jika i bukan 1 atau 3, maka elemen mencetak sesuai indeksnya
+
+if (i < number.length - 1) {
+                    System.out.print(",");
+                }
+: jika i belum mencapai indeks terakhir (number.length-1), maka mencetak koma
+
 //Latihan 1
 
 public class LatihanArray1 {} : digunakan untuk mendeklarasi kelas
@@ -183,3 +283,133 @@ for (int i = 0; i < 3; i++) {}
             }
             System.out.println();
 : dua loop for untuk menelusuri elemen baris per baris, mencetak setiap elemen ditambahkan spasi, mencetak baris berikutnya
+
+//Perkalian Matriks
+
+public class PerkalianMatriks {} : digunakan untuk mendeklarasi kelas
+
+public static void main(String[] args) {} : metode utama main yang akan dijalankan
+
+int[][] matriks1 = {
+            {7, 3},
+            {5, 2}
+        };
+int[][] matriks2 = {
+            {8, 6},
+            {3, 4}
+        };
+: matriks1 2*2 dan matriks2 2*2
+
+int[][] hasilKali = perkalianMatriks(matriks1, matriks2); : perkalian matriks1*matriks2 dan menyimpan hasilnya
+
+System.out.println("Hasil Perkalian Matriks:");
+        cetakMatriks(hasilKali);
+: mencetak teks "Hasil Perkalian Matriks:",cetakMatriks() untuk mencetak hasil
+
+public static int[][] perkalianMatriks(int[][] matriks1, int[][] matriks2) {} : metode ini menerima 2 matriks dan mengembalikan hasil dalam bentuk matriks
+
+int baris1 = matriks1.length;
+int kolom1 = matriks1[0].length;
+int kolom2 = matriks2[0].length;
+: jumlah baris matriks1, jumlah kolom matriks1, jumlah kolom matriks2
+
+int[][] hasil = new int[baris1][kolom2]; : membuat matriks kosong untuk menyimpan hasil
+
+for (int i = 0; i < baris1; i++) {}
+            for (int j = 0; j < kolom2; j++) {}
+                for (int k = 0; k < kolom1; k++) {}
+                    hasil[i][j] += matriks1[i][k] * matriks2[k][j];
+: tiga loop dugunakan untuk mengalikan dua matriks, i matriks1, j matriks2, k indeks iterasi perkalian
+
+return hasil; : mengembalikan matriks hasil perkalian
+
+public static void cetakMatriks(int[][] matriks) {} : menerima matriks dan mencetak 
+
+for (int i = 0; i < matriks.length; i++) {}
+            for (int j = 0; j < matriks[0].length; j++) {}
+: menggunakan dua loop for untuk mencetak baris per baris i untuk baris dan j untuk kolom
+
+System.out.print(matriks[i][j] + " "); : mencetak elemen ditambahkan spasi
+
+System.out.println(); : mencetak baris berikutnya
+
+//Tranpose Matriks
+
+public class TransposeMatriks {} : digunakan untuk mendeklarasi kelas
+
+public static void main(String[] args) {} : metode utama main yang akan dijalankan
+
+int[][] matriks = {
+            {5, 4, 3},
+            {9, 4, 2}
+        };
+: Array 2d berukuran 2*3
+
+int[][] hasilTranspose = transposeMatriks(matriks); : transposeMatriks untuk mengtransposisi matriks hasilnya disimpan ke variabel hasilTranspose
+
+System.out.println("Hasil Transpose Matriks:");
+        cetakMatriks(hasilTranspose);
+: mencetak teks "Hasil Transpose Matriks", memanggil metode cetakMatriks untuk mencetak isi
+
+public static int[][] transposeMatriks(int[][] matriks) {} : menerima sebuah matriks dan mengembalikan hasil
+
+int baris = matriks.length;
+int kolom = matriks[0].length;
+int[][] hasil = new int[kolom][baris];
+: jumlah baris dalam matriks, jumlah kolom dalam matriks, Array 2d kolom*baris
+
+for (int i = 0; i < baris; i++) {}
+            for (int j = 0; j < kolom; j++) {}
+                hasil[j][i] = matriks[i][j];
+: loop i mengiterasi baris, j mengiterasi kolom, elemen matriks dipindahkan ke hasil
+
+return hasil; : mengembalikan matriks hasil perkalian
+
+public static void cetakMatriks(int[][] matriks) {} : digunakan untuk mencetak elemen matriks
+
+or (int i = 0; i < matriks.length; i++) {}
+            for (int j = 0; j < matriks[0].length; j++) {}
+: menggunakan dua loop for untuk mencetak baris per baris i untuk baris dan j untuk kolom
+
+System.out.print(matriks[i][j] + " "); : mencetak elemen ditambahkan spasi
+
+System.out.println(); : mencetak baris berikutnya
+
+//Menentukan diagonal utama dan diagonal samping
+
+public class DiagonalMatriks {} : digunakan untuk mendeklarasi kelas
+
+public static void main(String[] args) {} : metode utama main yang akan dijalankan
+
+int[][] matriks = {
+            {2, 6, 4},
+            {3, 5, 2},
+            {9, 7, 6}
+        };
+: Array 2d berukuran 3*3
+
+System.out.println("Diagonal Utama:");
+        cetakDiagonalUtama(matriks);
+: menampilkan teks "Diagonal Utama:", cetakDiagonalUtama untuk mencetak elemen diagonal utama
+
+System.out.println("Diagonal Samping:");
+        cetakDiagonalSamping(matriks);
+: menampilkan teks "Diagonal Samping:", cetakDiagonalSamping untuk mencetak elemen diagonal samping
+
+public static void cetakDiagonalUtama(int[][] matriks) {} : digunakan mencetak elemen diagonal utama
+
+for (int i = 0; i < matriks.length; i++) {
+            System.out.print(matriks[i][i] + " ");
+        }
+        System.out.println();
+: loop i mengiterasi baris dan kolom, mencetak elemen ditambah spasi, mencetak baris berikutnya
+
+public static void cetakDiagonalSamping(int[][] matriks) {} : digunakan mencetak elemen diagonal samping
+
+int n = matriks.length; : menyimpan ukuran matriks jumlah baris/kolom
+
+for (int i = 0; i < n; i++) {
+            System.out.print(matriks[i][n - 1 - i] + " ");
+        }
+        System.out.println();
+: loop i mengiterasi baris matriks, mencetak elemen matriks [i][n - 1 - i] ditambah spasi, mencetak baris berikutnya
